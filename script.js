@@ -36,7 +36,7 @@ const quiz = [
         question: "Who is the prettiest girl in da world? 💕",
         answer: "YOU! 😍",
         spoiler: true,
-        image: "1",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQkadWy9-yGEv6IMIaYeDZ7VhZ8ptYFV9MiA&s",
         title: "The last, but not least"
     },    
     {
