@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brunch Date Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div id="accessContainer">
+      <h1>🔐 Access Code</h1>
+      <p class="question">Enter the 4-digit secret code to continue 💌</p>
+      <form id="codeForm">
+        <input type="password" id="codeInput" maxlength="4" pattern="\d{4}" required style="padding: 10px; font-size: 1rem; border-radius: 10px; border: 1px solid #ccc; text-align: center;" />
+        <br/>
+        <button type="submit">Unlock</button>
+      </form>
+      <div class="message" id="codeMessage"></div>
+    </div>
+
+    <div id="quizContainer">
+      <h1>💖 Ready for a Sweet Surprise?</h1>
+      <div class="question" id="question"></div>
+      <div class="options" id="options"></div>
+      <div class="message" id="message"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
