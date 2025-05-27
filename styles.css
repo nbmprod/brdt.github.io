@@ -8,7 +8,7 @@ body {
     height: 100vh;
     overflow: hidden;
   }
-
+  
   .container {
     background: #fff;
     border-radius: 20px;
@@ -19,23 +19,23 @@ body {
     text-align: center;
     animation: floatIn 1s ease-in-out;
   }
-
+  
   @keyframes floatIn {
     0% { transform: translateY(50px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
   }
-
+  
   h1 {
     color: #ff6b81;
     font-size: 1.8rem;
     margin-bottom: 20px;
   }
-
+  
   .question {
     font-size: 1.2rem;
     margin-bottom: 20px;
   }
-
+  
   .options button, #codeForm button {
     background: #ffb6c1;
     border: none;
@@ -46,22 +46,45 @@ body {
     cursor: pointer;
     transition: background 0.3s;
   }
-
+  
   .options button:hover, #codeForm button:hover {
     background: #ff6b81;
     color: white;
   }
-
+  
   .message {
     font-size: 1.4rem;
     color: #444;
     margin-top: 20px;
     animation: popIn 0.5s ease-in-out;
   }
-
+  
   @keyframes popIn {
     0% { transform: scale(0.8); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
   }
-
-  #quizContainer { display: none; }
+  
+  #quizContainer {
+    display: none;
+  }
+  
+  input#codeInput {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .spoiler {
+    margin-top: 20px;
+  }
+  .spoiler-content {
+    display: none;
+    margin-top: 10px;
+  }
+  .spoiler img {
+    width: 100%;
+    border-radius: 12px;
+  }
+  
