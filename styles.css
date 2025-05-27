@@ -58,6 +58,27 @@ body {
     margin-top: 20px;
     animation: popIn 0.5s ease-in-out;
   }
+
+  .up_cont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  .photo{
+    width: 200px;
+  }
+
+  .animated {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
   
   @keyframes popIn {
     0% { transform: scale(0.8); opacity: 0; }

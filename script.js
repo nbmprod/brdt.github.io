@@ -3,7 +3,7 @@ const quizContainer = document.getElementById("quizContainer");
 const codeForm = document.getElementById("codeForm");
 const codeInput = document.getElementById("codeInput");
 const codeMessage = document.getElementById("codeMessage");
-const secretCode = "1234";
+const secretCode = "1911";
 
 codeForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -18,45 +18,63 @@ codeForm.addEventListener("submit", (e) => {
 });
 
 const quiz = [
-  {
-    question: "What time is brunch best enjoyed?",
-    options: ["8 AM", "11 AM", "2 PM"],
-    answer: "11 AM"
-  },
-  {
-    question: "Which one is a brunch classic?",
-    options: ["Pizza", "Pancakes", "Sushi"],
-    answer: "Pancakes"
-  },
-  {
-    question: "Who is the prettiest girl in da world? 💕",
-    options: ["Angelina Jolie", "YOU! 😍", "Taylor Swift"],
-    answer: "YOU! 😍",
-    spoiler: true
-  },
-  {
-    question: "What drink pairs well with brunch?",
-    options: ["Milkshake", "Mimosa", "Cola"],
-    answer: "Mimosa"
-  }
-];
+    {
+      question: "What time is brunch best enjoyed?",
+      options: ["8 AM", "11 AM", "2 PM"],
+      answer: "11 AM",
+      image: "3.PNG",
+      title: "Hey gorgeous!<br/>💖 Ready for a Sweet Surprise?"
+    },
+    {
+      question: "What is the first place we've been 2gether?",
+      options: ["McDonalds", "Rocket", "SamoPivo"],
+      answer: "SamoPivo",
+      image: "1.PNG",
+      title: "What a night it was, ha 🌠"
+    },
+    {
+        question: "Who is the prettiest girl in da world? 💕",
+        answer: "YOU! 😍",
+        spoiler: true,
+        image: "1",
+        title: "The last, but not least"
+    },    
+    {
+      question: "How many times we've travelled?",
+      options: ["1", "2", "3"],
+      answer: "2",
+      image: "2.PNG",
+      title: "And hundreeds are coming🗺"
+    }
+  
+  ];  
 
 let current = 0;
 const questionEl = document.getElementById("question");
 const optionsEl = document.getElementById("options");
 const messageEl = document.getElementById("message");
 const spoilerEl = document.getElementById("spoiler");
+const titleMessage = document.getElementById("title");
 
 function loadQuestion() {
-    questionEl.textContent = quiz[current].question;
+    const currentQuiz = quiz[current];
+    questionEl.textContent = currentQuiz.question;
     optionsEl.innerHTML = "";
     messageEl.textContent = "";
     spoilerEl.innerHTML = "";
+    titleMessage.innerHTML = currentQuiz.title;
   
-    if (quiz[current].spoiler) {
+    const img = document.querySelector(".photo");
+    if (img && currentQuiz.image) {
+      img.src = currentQuiz.image;
+    }
+  
+    animateElements([questionEl, optionsEl, img]);
+  
+    if (currentQuiz.spoiler) {
       showSpoiler();
     } else {
-      quiz[current].options.forEach(option => {
+      currentQuiz.options.forEach(option => {
         const btn = document.createElement("button");
         btn.textContent = option;
         btn.onclick = () => checkAnswer(option);
@@ -64,6 +82,15 @@ function loadQuestion() {
       });
     }
   }
+  
+  function animateElements(elements) {
+    elements.forEach(el => {
+      if (!el) return;
+      el.classList.remove("animated");
+      void el.offsetWidth; // Trigger reflow
+      el.classList.add("animated");
+    });
+  }  
 
 function checkAnswer(selected) {
   if (selected === quiz[current].answer) {
@@ -132,5 +159,5 @@ function showSpoiler() {
 function showSurprise() {
   questionEl.textContent = "🎉 You did it!";
   optionsEl.innerHTML = "";
-  messageEl.innerHTML = `Your brunch date is set for <strong>Sunday at 11:00 AM</strong>! 🌷<br/>Get ready for love, laughter, and waffles 🧇💖`;
+  messageEl.innerHTML = `Your brunch date is set for <strong>8th of June, Sunday at 11:00 AM</strong>! 🌷<br/>Get ready for love and laughter 🧇💖`;
 }
